@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Header from "../components/sections/Header.astro";
+import Summary from "../components/sections/Summary.astro";
+import Experience from "../components/sections/Experience.astro";
+import Education from "../components/sections/Education.astro";
+import Skills from "../components/sections/Skills.astro";
+import Projects from "../components/sections/Projects.astro";
+import CommandMenu from "../components/CommandMenu.astro";
+---
+
+<Layout>
+	<main
+		class="relative mx-auto scroll-my-12 p-4 md:p-16 print:p-11 overflow-auto container"
+		id="main-content"
+	>
+		<section
+			class="space-y-8 print:space-y-4 bg-white mx-auto w-full max-w-2xl"
+			aria-label="Contenido del curriculum vitae"
+		>
+			<Header />
+
+			<div class="space-y-8 print:space-y-4">
+				<Summary />
+
+				<Experience />
+
+				<Education />
+
+				<Projects />
+
+				<Skills />
+			</div>
+		</section>
+	</main>
+	<nav class="print:hidden" aria-label="Navegación rápida">
+		<CommandMenu />
+	</nav>
+</Layout>

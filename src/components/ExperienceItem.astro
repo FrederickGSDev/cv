@@ -1,0 +1,50 @@
+---
+const { title, link, period, position, tags } = Astro.props
+
+const linkUpperCase = link.charAt(0).toUpperCase() + link.slice(1)
+
+const tagsArray = tags ? tags.split(",") : []
+---
+
+<article role="article">
+  <div class="bg-card py-1 print:py-0 rounded-lg text-card-foreground">
+    <div class="flex flex-col space-y-1.5 print:space-y-1">
+      <div class="flex justify-between items-center gap-x-2 text-base">
+        <h3 class="inline-flex justify-center items-center gap-x-1 font-semibold print:text-sm leading-none">
+          <a
+            class="hover:underline"
+            href={`https://${link}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label=`${linkUpperCase} company website`
+          >
+            {title ? title : linkUpperCase}
+          </a>
+          <ul class="sm:inline-flex gap-x-1 hidden p-0 list-none" aria-label="Tecnologías usadas" id="tags">
+            {
+              tagsArray.map((tag: string) => (
+                <li>
+                  <div class="inline-flex items-center bg-neutral-200 hover:bg-neutral-200/60 px-2 print:px-1 py-0.5 print:py-0.5 border border-transparent rounded-md focus:ring-2 focus:ring-ring focus:ring-offset-2 font-mono font-semibold text-nowrap text-secondary-foreground text-xs print:text-[8px] print:leading-tight transition-colors align-middle focus:outline-none">
+                    {tag}
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        </h3>
+        
+        <div class="text-gray-500 text-sm tabular-nums" aria-label=`Periodo de la experiencia: ${period}`>
+          {period}  
+        </div>
+      </div>
+      <h4 class="font-mono font-semibold text-sm print:text-[12px] leading-none">
+        {position}
+      </h4>
+    </div>
+    <div class="font-mono text-neutral-700 text-pretty text-sm">
+      <div class="mt-2 print:mt-1 text-pretty text-sm print:text-[10px]">
+        <slot />
+      </div>
+    </div>
+  </div>
+</article>

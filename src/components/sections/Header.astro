@@ -1,0 +1,73 @@
+---
+import MailIcon from "@/icons/MailIcon.astro"
+import WorldIcon from "@/icons/WorldIcon.astro"
+import PhoneIcon from "@/icons/PhoneIcon.astro"
+import GithubIcon from "@/icons/GithubIcon.astro"
+import LinkedinIcon from "@/icons/LinkedinIcon.astro"
+---
+
+<header class="flex justify-between items-center">
+  <div class="flex-1 space-y-1.5">
+
+    <h1 class="font-bold text-2xl" id="resume-name">
+      Frederick Guzmán Salas
+    </h1>
+
+    <p class="max-w-md font-mono text-neutral-700 text-pretty text-sm print:text-[12px]" aria-labelledby="resume-name" >
+      Ingeniero en Desarrollo y Gestión de Software
+      especializado en desarrollo web full-stack.
+    </p>
+
+    <p class="flex items-center gap-1 max-w-md font-mono text-neutral-800 text-pretty text-xs">
+        <WorldIcon size="small"/>
+        Petatlán, Guerrero, MX
+    </p>
+
+    <div class="flex gap-x-1 print:hidden pt-1 font-mono text-foreground/80 text-sm" role="list" aria-label="Enlaces de contacto">
+
+      <a href="https://fredgs.dev" aria-label="Sitio web" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center border-input bg-background hover:bg-accent disabled:opacity-50 border rounded-md focus-visible:ring-2 focus-visible:ring-ring ring-offset-background focus-visible:ring-offset-2 font-medium text-sm hover:text-accent-foreground whitespace-nowrap transition-colors disabled:pointer-events-none focus-visible:outline-none size-8">
+        <WorldIcon size="medium"/>
+      </a>
+      
+      <a href="mailto:fredgs.dev@gmail.com" aria-label="Correo electrónico" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center border-input bg-background hover:bg-accent disabled:opacity-50 border rounded-md focus-visible:ring-2 focus-visible:ring-ring ring-offset-background focus-visible:ring-offset-2 font-medium text-sm hover:text-accent-foreground whitespace-nowrap transition-colors disabled:pointer-events-none focus-visible:outline-none size-8">
+        <MailIcon />
+      </a>
+
+      <a href="tel:+527581046172" aria-label="Telefono" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center border-input bg-background hover:bg-accent disabled:opacity-50 border rounded-md focus-visible:ring-2 focus-visible:ring-ring ring-offset-background focus-visible:ring-offset-2 font-medium text-sm hover:text-accent-foreground whitespace-nowrap transition-colors disabled:pointer-events-none focus-visible:outline-none size-8" >
+        <PhoneIcon />
+      </a>
+        
+      <a href="https://github.com/FrederickGSDev" aria-label="GitHub" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center border-input bg-background hover:bg-accent disabled:opacity-50 border rounded-md focus-visible:ring-2 focus-visible:ring-ring ring-offset-background focus-visible:ring-offset-2 font-medium text-sm hover:text-accent-foreground whitespace-nowrap transition-colors disabled:pointer-events-none focus-visible:outline-none size-8">
+        <GithubIcon />
+      </a>
+
+      <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center border-input bg-background hover:bg-accent disabled:opacity-50 border rounded-md focus-visible:ring-2 focus-visible:ring-ring ring-offset-background focus-visible:ring-offset-2 font-medium text-sm hover:text-accent-foreground whitespace-nowrap transition-colors disabled:pointer-events-none focus-visible:outline-none size-8">
+        <LinkedinIcon />
+      </a>
+
+    </div>
+    
+    <div class="print:flex gap-x-2 hidden font-mono text-foreground/80 text-sm print:text-[12px]" aria-label="Print información de contacto" >
+      <a class="hover:text-foreground/70 underline" href="https://fredgs.dev">
+        fredgs.dev
+      </a>
+      <span aria-hidden="true">&bull;</span>
+      <a class="hover:text-foreground/70 underline" href="mailto:fredgs.dev@gmail.com">
+        fredgs.dev@gmail.com
+      </a>
+      <span aria-hidden="true">&bull;</span>
+      <a class="hover:text-foreground/70 underline" href="tel:+527581046172">
+        +527581046172
+      </a>
+    </div>
+
+  </div>
+
+  <span class="relative flex rounded-xl overflow-hidden shrink-0 size-28" aria-hidden="true">
+    <img
+      class="object-top w-full h-full aspect-square object-cover"
+      alt="Imagen de perfil de Frederick Guzmán Salas"
+      src="/FGS.jpg"
+    />
+  </span>
+</header>
